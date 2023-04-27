@@ -8,6 +8,17 @@
 		<title>LSBU Virtual Tour | Home</title>
 	</head>
 	<body>
-		<a-scene> </a-scene>
+		<a-scene>
+			<a-assets>
+				<a-asset-item
+					id="base-scene"
+					src="assets/classroom.glb"
+				></a-asset-item>
+			</a-assets>
+
+			<a-entity id="base-entity">
+				<a-gltf-model src="#base-scene" scale="1 1 1"></a-gltf-model>
+			</a-entity>
+		</a-scene>
 	</body>
 </html>
