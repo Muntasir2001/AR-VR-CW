@@ -15,29 +15,49 @@
 		<a-scene>
 			<a-entity id="scene1" position="0 -1 0" visible="true">
 				<a-gltf-model src="#location1" scale="1 1 1"></a-gltf-model>
-				<a-box color="red" position="-5 1 -2" scale="0.5 0.5 0.5" onclick="scene_2()">
-					<a-text value="Teleport to Garage" rotation="0 90 0" position="0 1 1" scale="1 1 1"></a-text>
+
+				<a-cone color="red" position="-5 1 -2" scale="0.5 0.5 0.5" onclick="scene_2()">
+					<a-text value="Go to previous {name}" rotation="0 90 0" position="0 1 1" scale="1 1 1"></a-text>
+				</a-cone>
+				<a-box color="red" position="-1 1 -3" scale="0.5 0.5 0.5">
+					<a href="index.html">
+						<a-text value="Return home" rotation="0 90 0" position="0 1 1" scale="1 1 1"></a-text>
+					</a>
 				</a-box>
-				<a-box color="red" position="-3 1 -2" scale="0.5 0.5 0.5" onclick="scene_3()">
-					<a-text value="Teleport to Engine" rotation="0 90 0" position="0 1 1" scale="1 1 1"></a-text>
-				</a-box>
+				<a-cone color="red" position="-3 1 -2" scale="0.5 0.5 0.5" onclick="scene_3()">
+					<a-text value="Go to next {name}" rotation="0 90 0" position="0 1 1" scale="1 1 1"></a-text>
+				</a-cone>
+
 			</a-entity>
 	
 			<a-entity id="scene2" position="0 -1 0" visible="false">
 				<a-gltf-model src="#location2" scale="1 1 1"></a-gltf-model>
-				<a-box color="red" position="-1 1 -3" scale="0.5 0.5 0.5" onclick="scene_1()">
-					<a-text value="Teleport to Apartment" rotation="0 90 0" position="0 1 1" scale="1 1 1"></a-text>
+
+				<a-cone color="red" position="-5 1 -2" scale="0.5 0.5 0.5" onclick="scene_2()">
+					<a-text value="Go to previous {name}" rotation="0 90 0" position="0 1 1" scale="1 1 1"></a-text>
+				</a-cone>
+				<a-box color="red" position="-1 1 -3" scale="0.5 0.5 0.5">
+					<a-text value="Return home" rotation="0 90 0" position="0 1 1" scale="1 1 1"></a-text>
 				</a-box>
-				<a-box color="red" position="1 1 -3" scale="0.5 0.5 0.5" onclick="scene_3()">
-					<a-text value="Teleport to Engine" rotation="0 90 0" position="0 1 1" scale="1 1 1"></a-text>
-				</a-box>
+				<a-cone color="red" position="-3 1 -2" scale="0.5 0.5 0.5" onclick="scene_3()">
+					<a-text value="Go to next {name}" rotation="0 90 0" position="0 1 1" scale="1 1 1"></a-text>
+				</a-cone>
+
 			</a-entity>
 	
 			<a-entity id="scene3" position="0 -1 0" visible="false">
 				<a-gltf-model src="#location3" scale="1 1 1"></a-gltf-model>
-				<a-box color="red" position="-1 1 -3" scale="0.5 0.5 0.5" onclick="scene_1()">
-					<a-text value="Teleport to Apartment" rotation="0 90 0" position="0 1 1" scale="1 1 1"></a-text>
+
+				<a-cone color="red" position="-5 1 -2" scale="0.5 0.5 0.5" onclick="scene_2()">
+					<a-text value="Go to previous {name}" rotation="0 90 0" position="0 1 1" scale="1 1 1"></a-text>
+				</a-cone>
+				<a-box color="red" position="-1 1 -3" scale="0.5 0.5 0.5">
+					<a-text value="Return home" rotation="0 90 0" position="0 1 1" scale="1 1 1"></a-text>
 				</a-box>
+				<a-cone color="red" position="-3 1 -2" scale="0.5 0.5 0.5" onclick="scene_3()">
+					<a-text value="Go to next {name}" rotation="0 90 0" position="0 1 1" scale="1 1 1"></a-text>
+				</a-cone>
+
 			</a-entity>
 	
 			<!-- Player Viewport -->
@@ -48,6 +68,14 @@
 		</a-scene>
 
 		<script type="text/javascript">
+			function stopVideos() {
+				document.querySelectorAll(".video").pause();
+			}
+
+			function hideScenes() {
+				document.querySelectorAll(".scene").setAttribute("visible", "false");
+			}
+
 			function scene_1() {
 				document.getElementById("scene1").setAttribute("visible", "true");
 				document.getElementById("scene2").setAttribute("visible", "false");
