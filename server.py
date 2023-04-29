@@ -1,4 +1,3 @@
-import os
 import http.server, ssl, socketserver
 
 PORT=3000
