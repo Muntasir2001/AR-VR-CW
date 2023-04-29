@@ -20,10 +20,19 @@
 					id="base-scene"
 					src="assets/classroom.glb"
 				></a-asset-item>
+				<img
+					id="logo"
+					src="assets/lsbu-logo.png"
+				/>
 			</a-assets>
 
 			<a-entity id="base-entity">
 				<a-gltf-model src="#base-scene" scale="1 1 1"></a-gltf-model>
+				<a-text color="black" value="Welcome to the LSBU Virtual Tour!" position="-14.191 8.020 4.623" rotation="0 90 0" scale="2.5 2.5 2.5"></a-text>
+				<a-image src="#logo" position="-14.191 6.573 0.420" rotation="0 90 0" scale="3 3 3"></a-image>
+				<a-box color="red" position="-1.839 4.5 0" scale="0.5 0.5 0.5" onclick="start()">
+					<a-text color="black" value="Press to Begin" position="0.5 0.75 0.75" rotation="0 90 0" scale="1 1 1"></a-text>
+				</a-box>
 			</a-entity>
 
 			<a-entity id="camera" rotation="0 90 0">
@@ -31,6 +40,11 @@
 					<a-cursor color="red"></a-cursor>
 				</a-camera>
 			</a-entity>
+			<script type="text/javascript">
+				function start() {
+					window.location.href = '/scenes.html';
+				}
+			</script>
 		</a-scene>
 	</body>
 </html>
